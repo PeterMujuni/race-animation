@@ -19,6 +19,7 @@ body {
 .sky {
     height: 40%;
     background: skyblue;
+
 }
 
 .grass {
@@ -50,12 +51,56 @@ body {
     top: -70px;
     left: 0px;
     animation-name: drive;
-    animation-duration: 3s;
+    animation-duration: 3.3s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation: drive 3.3s linear infinite normal both, jump 0.3s 1.2s ease;
+}
+
+.luigi {
+    position: absolute;
+    top: 150px;
+    left: 0;
+    animation-name: drive;
+    animation-duration: 3.5s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+.claud {
+    position: absolute;
+}
+
+.claud:nth-child(1) {
+    width: 200px;
+    top: 120px;
+    opacity: 0.5;
+    animation: wind 80s linear infinite reverse;
+}
+
+.claud:nth-child(2) {
+    width: 300px;
+    top: 0;
+    animation: wind 50s linear infinite reverse;
 }
 
 /*// KEYFRAMES //*/
 
 @keyframes drive {
-    from{ transform: translate(0)}
-    to{transform: translateX(1500px);}
+    from{ transform: translate(-100px)}
+    to{transform: translateX(1300px);}
+}
+
+@keyframes wind {
+    from{left: -300px}
+    to{left: 100%}
+}
+
+@keyframes jump {
+    0%{top: -40px}
+    50%{top: -100px}
+    100%{top: -40px}
 }
